@@ -14,6 +14,7 @@ jobs:
       matrix:
         unity:
           - { version: "ubuntu-2021.3.19f1-linux-il2cpp-1" }
+          - { version: "ubuntu-2021.3.24f1-linux-il2cpp-1" }
         coverage:
           - false
     runs-on: ubuntu-latest
