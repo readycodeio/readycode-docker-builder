@@ -88,7 +88,7 @@ RUN apt-get -q install -y curl python-apt xterm xz-utils zenity \
 # run steam for the first time
 RUN X -config /etc/X11/xorg.conf & sleep 5 \
  && export DISPLAY=:0 \
- && steam & sleep 300
+ && steam & sleep 200
 
 # stop steam & X
 RUN echo ~ \
