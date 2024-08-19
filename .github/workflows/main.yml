@@ -13,14 +13,20 @@ jobs:
       fail-fast: false
       matrix:
         unity:
-          - { version: "ubuntu-2021.2.12f1-linux-il2cpp-1" }
           - { version: "ubuntu-2021.3.19f1-linux-il2cpp-1" }
           - { version: "ubuntu-2021.3.24f1-linux-il2cpp-1" }
+          - { version: "ubuntu-2021.3.40f1-linux-il2cpp-1" }
         coverage:
           - false
     runs-on: ubuntu-latest
     timeout-minutes: 35
     steps:
+      - name: Clean up unused Docker resources
+        run: docker system prune -af
+
+      - name: Check disk space
+        run: df -h
+
       - name: Set up Git repository
         uses: actions/checkout@v2
 
